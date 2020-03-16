@@ -1,0 +1,38 @@
+<div class="canvas">
+        
+    <header>
+        <h1>Viel Spaß!</h1>
+        <mat-spinner class="light" diameter="50"></mat-spinner>
+    </header>
+    <!--<div class="map-container">
+        <div id="map"></div>
+    </div>-->
+    <div>
+        <img src="https://image.flaticon.com/sprites/new_packs/427909-project-management.png" xmlns="http://www.w3.org/2000/svg" width="300" height="250" viewBox="0 0 176.26 31.59"> 
+
+    </div>
+    <footer>
+        <table>
+            <tr>
+                <td>Projektzeit</td>
+                <td>{{elapsedTimeInSeconds | time }}</td>
+            </tr>
+         
+            <tr>
+                <td>Nutzer</td>
+                <td>{{user.value}}</td>
+            </tr>
+            <tr>
+                <td>Projekt</td>
+                <td>{{reason.value}}</td>
+            </tr>
+            <tr>
+                <td>Handbuch</td>
+                <td> Link zum Handbuch </td>
+            </tr>
+        </table>
+
+        <button mat-raised-button color="primary" (click)="end()" >Projekt beenden</button>
+
+    </footer>
+</div>

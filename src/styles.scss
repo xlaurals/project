@@ -1,1 +1,86 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+/* For use in src/lib/core/theming/_palette.scss */
+$projectAppPalette: (
+    50 : #fef8e6,
+    100 : #fdeec0,
+    200 : #fce397,
+    300 : #fbd86d,
+    400 : #facf4d,
+    500 : #f9c72e,
+    600 : #f8c129,
+    700 : #f7ba23,
+    800 : #f6b31d,
+    900 : #f5a612,
+    A100 : #ffffff,
+    A200 : #fff9ef,
+    A400 : #ffe6bc,
+    A700 : #ffdca2,
+
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+   
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$projectApp-primary:mat-palette($projectAppPalette);
+$projectApp-accent: mat-palette($mat-pink, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$projectApp-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$projectApp-theme: mat-light-theme($projectApp-primary, $projectApp-accent, $projectApp-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($projectApp-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+$accent:#F9C72E; //login seite und buttons
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#cta {
+    position: fixed;
+    bottom: 24px;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
+
+mat-radio-button {
+    width: 100%;
+}
+.mat-radio-container {
+    display: none !important;
+}
+.light.mat-progress-spinner circle, .light.mat-spinner circle{
+    stroke:#F9C72E !important;
+}

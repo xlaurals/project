@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/login">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+Profil
+<span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
+
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Nutzer" [formControl]="user">  
+
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code" (click) = "showScanner =true; $event.stopPropagation()">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>Nutzer manuel eintippen oder Studentenkarte einscannen</mat-hint>
+    </mat-form-field>
+    <p> {{user.value}}</p>
+    <mat-form-field>
+        <input matInput placeholder="Matrikelnummer"  [formControl]="matrikelnummer">
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code" (click) = "showScanner =true; $event.stopPropagation()">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>Matrikelnummer manuel eintippen oder Studentenkarte einscannen</mat-hint>
+</mat-form-field>
+<mat-form-field>
+    
+    <mat-label>Fakultät</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let faculty of faculties" [value]="faculty.value">
+          {{faculty.viewValue}}
+        </mat-option>
+      </mat-select> 
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Studiengang</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let degree of degrees" [value]="degree.value">
+          {{degree.viewValue}}
+        </mat-option>
+      </mat-select> 
+</mat-form-field>
+</form>  
+  
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="next()">
+    <mat-icon>arrow_forward</mat-icon>
+</button>
+
+
+<app-scan *ngIf="showScanner" (closed)="showScanner =false"> </app-scan>
+
+
+

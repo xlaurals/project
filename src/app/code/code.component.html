@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/profil">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+  Code
+  <span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon> vpn_key</mat-icon>
+    </button>
+ 
+</mat-toolbar>
+
+<form>
+
+    <mat-form-field>
+        <input matInput placeholder="Code">  
+    </mat-form-field>
+</form>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="next()">
+    <mat-icon>arrow_forward</mat-icon>
+</button>

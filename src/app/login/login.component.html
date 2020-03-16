@@ -1,0 +1,17 @@
+<div class="canvas">
+    <h1 class="subtle">Projekt-App</h1>
+    <h1>Login</h1>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Username" [formControl]="user">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Passwort" type="password" [formControl]="password">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="login()">Login</button>
+    <div class="error">{{error}}</div>
+
+    <img src="https://www.hs-pforzheim.de/typo3conf/ext/wr_hspfo/Resources/Public/Images/HS_PF_Logo_Grau.svg" xmlns="http://www.w3.org/2000/svg" width="400" height="80" viewBox="0 0 176.26 31.59"> 
+</div>

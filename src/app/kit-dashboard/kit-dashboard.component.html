@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/kitoptions">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Kit Dashboard
+    <span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon>build</mat-icon>
+    </button>
+</mat-toolbar>
+
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Kit" matInput [value]="option.value"
+        [formControl]= "option"
+        [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let o of options" [value]="o">
+            {{o}}
+        </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Einzelteile" [formControl]="bits1">
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code" (click) = "showScanner =true; $event.stopPropagation()">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>Bits zählen oder ein deutliches Foto machen</mat-hint>
+
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Einzelteile" [formControl]="bits2">
+        <button mat-button matSuffix mat-icon-button aria-label="Scan QR Code" (click) = "showScanner =true; $event.stopPropagation()">
+            <mat-icon>camera_alt</mat-icon>
+        </button>
+        <mat-hint>Bits zählen oder ein deutliches Foto machen</mat-hint>
+
+    </mat-form-field>
+  
+</form>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="save()">
+    <mat-icon>arrow_forward</mat-icon>
+</button>
+
+<app-scan *ngIf="showScanner" (closed)="showScanner =false"> </app-scan>
+
+

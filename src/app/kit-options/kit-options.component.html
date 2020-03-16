@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/projectreasons">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Kit wählen
+    <span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon>build</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-nav-list>
+    <mat-list-item *ngFor="let o of options; let i = index">
+        <mat-radio-button [value]="i" (change)="selection = $event.value">
+            {{o}}
+        </mat-radio-button>
+        <mat-icon *ngIf="selection == i">check</mat-icon>
+    </mat-list-item>
+</mat-nav-list>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click) = "next()">
+    <mat-icon>check</mat-icon>
+</button>

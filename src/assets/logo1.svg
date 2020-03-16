@@ -1,0 +1,19 @@
+
+   <svg 
+                <div class="hidden-md hidden-sm hidden-xs hidden-print">
+                    <a title="Hochschule Pforzheim" target="_top" href="/">
+                        <img src="/typo3conf/ext/wr_hspfo/Resources/Public/Images/HS_PF_Logo_Grau.svg" alt="Hochschule Pforzheim">
+
+                    </a>
+                </div>
+                <div class="visible-md visible-sm visible-xs hidden-print">
+                    <a title="Hochschule Pforzheim" target="_top" href="/">
+                        <img src="/typo3conf/ext/wr_hspfo/Resources/Public/Images/HS_PF_Logo_Grau.svg">
+                    </a>
+                </div>
+                <div class="visible-print-block">
+                    <img alt="Hochschule Pforzheim" src="/typo3conf/ext/wr_hspfo/Resources/Public/Images/HS_PF_Logo_Grau.svg" width="286" height="130">
+                </div>
+            
+  
+</svg>

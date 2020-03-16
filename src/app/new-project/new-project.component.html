@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/dashboard">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Neues Projekt
+    <span class="spacer"></span>
+    <button mat-button aria-label="Profil">
+        <mat-icon>assignment</mat-icon>
+    </button>
+</mat-toolbar>
+
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Nutzer" [value]="user.value">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Start Datum & Uhrzeit" type="datetime" [value]="start.value | date:'dd.MM.yyyy HH:mm'" [formControl]="start">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Start Ort" [formControl]="startLocation">
+        <button mat-button matSuffix mat-icon-button aria-label="GPS location">
+            <mat-icon>my_location</mat-icon>
+        </button>
+        <mat-hint>Position per GPS erkannt</mat-hint>
+    </mat-form-field>
+
+  
+</form>
+
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click)="next()">
+    <mat-icon>arrow_forward</mat-icon>
+</button>
+
+<app-scan *ngIf="showScanner" (closed)="showScanner =false"> </app-scan>
+
+

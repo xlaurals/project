@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <button mat-button aria-label="Zurück" routerLink="/inproject">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    Projekt beenden
+
+</mat-toolbar>
+
+<form>
+        <mat-form-field>
+                <input matInput placeholder="Stunden" [formControl]="endTime">
+                <mat-hint>Hier werden Projektstunden berechnet</mat-hint>
+            </mat-form-field>
+
+           
+  <mat-form-field>
+        <input matInput placeholder="Projektgrund" matInput [value]="reason.value"
+        [formControl]= "reason"
+        [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let r of reasons" [value]="r">
+            {{r}}
+        </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+   
+</form>
+<button id="cta" color="primary" mat-fab aria-label="Weiter" (click) = "save()" >
+    <mat-icon>check</mat-icon>
+</button>
